@@ -23,7 +23,13 @@
         "react",
         "@typescript-eslint"
     ],
+    "settings": {
+        "import/resolver": "webpack"
+    },
     "rules": {
-        "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx", "ts"] }],
+        "import/extensions": [0, {"ts": "always"}],
+        "import/no-unresolved": [0 , { "caseSensitive": true }],
+        "import/prefer-default-export": "off"
     }
 }

@@ -1,7 +1,12 @@
 import React from 'react';
+import GlobalStyle from './styles/global';
+import SingIn from './pages/sigin';
 
 const App: React.FC = () => (
-  <h1>App Barber</h1>
+  <>
+    <SingIn />
+    <GlobalStyle />
+  </>
 );
 
 export default App;
