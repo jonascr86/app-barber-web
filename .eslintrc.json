@@ -4,6 +4,7 @@
         "es6": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
         "airbnb"
     ],
@@ -27,6 +28,10 @@
         "import/resolver": "webpack"
     },
     "rules": {
+        "no-undef": "warn",
+        "no-unused-vars": "warn",
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
         "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx", "ts"] }],
         "import/extensions": [0, {"ts": "always"}],
         "import/no-unresolved": [0 , { "caseSensitive": true }],

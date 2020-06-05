@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 import BackgroudImage from '../../assets/sigin-background.jpeg';
 
 export const Container = styled.div`
@@ -26,31 +27,39 @@ export const Content = styled.div`
       margin-bottom: 24px;
     }
 
-    input{
-      background: #232129;
-      border-radius: 18px;
-      border: 2px solid #232129;
-      padding: 16;
-      width: 100%;
+    a{
+      color: #f4ede8;
+      display: block;
+      margin-top: 24px;
+      text-decoration: none;
+      transition: color 0.2s;
 
-      & + input{
-        margin-top: 8px;
+      &:hover{
+        color: ${shade(0.2, '#f4ede8')};
       }
     }
+  }
 
-    button{
-      background: #ff9000;
-      height: 56px;
-      border-radius: 10px;
-      border: 0;
-      padding: 8px 16px;
-      color: #312e38; 
-      width: 100%;
-      font-weight: 500;
-      margin-top: 16px;
+  > a{
+    color: #ff9000;
+    display: block;
+    margin-top: 24px;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    display: flex;
+    align-items: center;
+
+    svg{
+      margin-right: 16px;
+    }
+
+    &:hover{
+      color: ${shade(0.2, '#ff9000')};
     }
   }
 `;
+
 export const Background = styled.div`
   flex: 1;
   background: url(${BackgroudImage}) no-repeat center;
