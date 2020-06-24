@@ -8,13 +8,18 @@ import logo from '../../assets/logo.svg';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import getValidationErrors from '../../utils/GetValidationErrors';
-import Authcontext from '../../Context/AuthContext';
+import { AuthContext } from '../../Context/AuthContext';
+
+interface SignInFormData{
+  email: string;
+  password: string;
+}
 
 const SigIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const { name } = useContext(Authcontext);
+  const { signIn } = useContext(AuthContext);
 
-  const handleSubmit = useCallback(async (data: object) => {
+  const handleSubmit = useCallback(async (data: SignInFormData) => {
     formRef.current?.setErrors({});
     try {
       const schema = Yup.object().shape({
@@ -26,10 +31,14 @@ const SigIn: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
+      signIn({
+        email: data.email,
+        password: data.password,
+      });
     } catch (err) {
       formRef.current?.setErrors(getValidationErrors(err));
     }
-  }, []);
+  }, [signIn]);
 
   return (
     <Container>
