@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import GlobalStyle from './styles/global';
-import SingIn from './pages/SignIn';
 import { Providers } from './hooks';
 import Routes from './routes';
 

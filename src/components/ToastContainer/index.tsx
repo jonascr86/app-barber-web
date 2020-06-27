@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTransition } from 'react-spring';
 import { Container } from './style';
-import { ToastMassage, useToast } from '../../hooks/Toast';
+import { ToastMassage } from '../../hooks/Toast';
 import Toast from './Toast';
 
 interface ToasContainerProps{
@@ -9,7 +9,6 @@ interface ToasContainerProps{
 }
 
 const ToastContainer: React.FC<ToasContainerProps> = ({ messages }) => {
-  const { removeToast } = useToast();
   const messagesWithTransitions = useTransition(
     messages,
     (message) => message.id,
