@@ -1,6 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 import BackgroudImage from '../../assets/sigup-background.jpg';
+
+const appearFromRight = keyframes`
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 
 export const Container = styled.div`
   height: 100vh;
@@ -11,12 +23,23 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+`;
 
-  place-content: center;
+export const AnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
   align-items: center;
 
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
+
+  animation: ${appearFromRight} 1s;
 
   form{
     margin: 80px 0;
